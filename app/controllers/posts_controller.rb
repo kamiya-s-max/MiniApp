@@ -24,6 +24,12 @@ class PostsController < ApplicationController
     redirect_to action: :index    
   end
 
+  def destroy
+    post = Post.destroy(params[:id])
+    post.destroy if post.user_id == current_user.id
+    redirect_to action: :index
+  end
+
   private
   def post_params
     params.require(:post).permit(:text)
