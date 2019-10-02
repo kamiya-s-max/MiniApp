@@ -1,9 +1,14 @@
 <div class="contents row" >
   <% @posts.each do |post|%>
     <%= simple_format(post.text) %>
-    <li>
-      <%= link_to 'edit', edit_post_path(post), method: :get %>
-    </li>
+    <% if user_signed_in? && post.user_id == current_user.id %>
+      <li>
+        <%= link_to 'edit', edit_post_path(post), method: :get %>
+      </li>
+      <li>
+        <%= link_to 'delete', post_path(post), method: :delete %>
+      </li>
+    <% end %>
   <% end %>
 
 </div>
