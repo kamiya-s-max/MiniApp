@@ -1,5 +1,9 @@
 <div class="contents row" >
   <% @posts.each do |post|%>
-  <%= simple_format(post.text) %>
+    <%= simple_format(post.text) %>
+    <li>
+      <%= link_to 'edit', edit_post_path(post), method: :get %>
+    </li>
   <% end %>
+
 </div>
