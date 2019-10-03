@@ -1,14 +1,10 @@
-<div class="contents row" >
-  <% @posts.each do |post|%>
-    <%= simple_format(post.text) %>
-    <% if user_signed_in? && post.user_id == current_user.id %>
-      <li>
-        <%= link_to 'edit', edit_post_path(post), method: :get %>
-      </li>
-      <li>
-        <%= link_to 'delete', post_path(post), method: :delete %>
-      </li>
-    <% end %>
-  <% end %>
-
+<div class="container">
+  <div class="row">
+    <div class="col l12 m6">
+      <% @posts.each do |post|%>
+        <%= render partial: "post", locals: { post: post } %>  
+      <% end %>
+        <%= paginate(@posts)%>
+    </div>
+  </div>
 </div>
