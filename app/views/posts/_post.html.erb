@@ -1,0 +1,14 @@
+<div class="card-panel hoverable z-depth-1">
+  <div class="card blue-grey darken-1">
+    <div class="card-content white-text">
+      <span class="card-title"></span>
+      <%= simple_format(post.text) %>
+    </div>
+    <div class="card-action">
+      <% if user_signed_in? && post.user_id == current_user.id %>
+        <%= link_to 'edit', edit_post_path(post), method: :get %>
+        <%= link_to 'delete', post_path(post), method: :delete %>
+      <% end %>
+    </div>
+  </div>
+</div>
