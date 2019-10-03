@@ -1,15 +1,9 @@
-<div class="row">
-
-    <h3>
-      投稿する
-    </h3>
-    <div class="container">
-      <div class="input-field col s12">
-        <%= form_for @post do |f| %>
-          <%= f.label :text %>
-          <%= f.text_area :text %>
-          <%= f.submit "submit" %>
-        <% end %>
-      </div>
-    </div>
+<h3>
+  POST
+</h3>
+<div class="input-field col s12">
+  <%= form_for @post do |f| %>
+    <%= f.text_area :text %>
+    <%= f.submit "submit" %>
+  <% end %>
 </div>
