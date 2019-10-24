@@ -1,5 +1,6 @@
 # README
 sourcetreeのためのtest
+sourcetreeのためのtest２
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
