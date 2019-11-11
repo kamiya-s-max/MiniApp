@@ -1,2 +1,0 @@
-class ConflictB < ApplicationRecord
-end
